@@ -1,0 +1,506 @@
+/* General Reset */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* !!!!!Revisar lo de las fuentes de texto!!!!!! */
+body {
+  line-height: 1.6;
+  color: #333;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Header Principal */
+.container{
+  max-width: 1440px;/* Ancho máximo */
+  margin: 0 auto; /* Centrado horizontal */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: space-between; /* Separar logo y menú */
+  width: 100%;
+}
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+.logo img{
+  width: 75px;
+  max-height: auto; /* Altura maxima relatica al ancho */
+
+  margin-bottom: 0.625rem; /* Separación inferior */
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.logo img:hover {
+  transform: scale(1.2); /* Escalar al 120% del tamaño original */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #245B3E;
+  font-size: 1.25rem;
+  font-weight: bold;
+  transition: color 0.3s;
+  position: relative; /* Necesario para usar ::after */
+}
+
+
+/* Barra animada debajo del texto */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%; /* Inicia con ancho 0 */
+  height: 2px; /* Altura de la barra */
+  background-color: #02c0a0; /* Color de la barra */
+  transition: width 0.3s ease; /* Transición para la animación */
+}
+
+/* Barra se expande al pasar el cursor */
+.nav-links a:hover::after {
+  width: 100%; /* Se expande a todo el ancho del enlace */
+}
+
+.nav-links a:hover {
+  color: #02c0a0;
+}
+
+/* ----------------------------------------------------------- */
+
+/* Secciones Parallax */
+
+/* parallax-inicio */
+.parallax-inicio {
+  position: relative;
+  height: 75vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* color: white; */
+  text-align: center;
+
+}
+
+.parallax-inicio .content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column; /* Apilar elementos verticalmente */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  height: 100%; /* Asegura que el contenido ocupe toda la altura del contenedor */
+  text-align: center; /* Centrar texto dentro de los elementos */
+  padding: 20px; /*dar espacio alrededor del contenido */
+  width: 100%; /* Para que el ancho ocupe el 100%*/
+}
+
+.parallax-inicio .content h1{
+  color: white; /* Para que el texto se vea bien en el fondo oscuro */
+  font-size: 3rem;
+}
+
+.parallax-inicio .content p{
+  color:#02c0a0;
+  font-size: 1.5rem;
+
+}
+
+.parallax-inicio .content a{
+  margin-top: 25px;
+}
+
+/* parallax-intermedia */
+
+.parallax-intermedia {
+  position: relative;
+  height: 40vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.parallax-intermedia .content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+  
+  display: flex;
+  flex-direction: column; /* Apilar elementos verticalmente */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  height: 100%; /* Asegura que el contenido ocupe toda la altura del contenedor */
+  text-align: center; /* Centrar texto dentro de los elementos */
+  padding: 20px; /*dar espacio alrededor del contenido */
+   width: 100%; /* Para que el ancho ocupe el 100%*/
+} 
+ 
+.parallax-intermedia .content h1{
+  color: white; /* Para que el texto se vea bien en el fondo oscuro */
+  font-size: 3rem;
+}
+.parallax-intermedia .content p{
+  color:#02c0a0;
+  font-size: 1.5rem;  
+
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/* Seccion NOSOTROS */
+
+.nosotros-container {
+  display: flex; /* Usa Flexbox para organizar el contenido en dos columnas */
+  align-items: center; /* Centra verticalmente la imagen y el texto */
+  gap: 10px; /* Espaciado entre columnas */
+  max-width: 1440px;/* Ancho máximo */
+  padding: 10px;
+  padding: 50px 20px;
+  text-align: center;
+  margin: auto;
+}
+
+.nosotros-img {
+  flex: 2; /* La imagen ocupa dos columnas */
+  max-width: 500px; /* Tamaño máximo de la imagen */
+  
+}
+.nosotros-img img {
+  width: 100%; /* Imagen responsive */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+.nosotros-text {
+  flex: 1; /* El texto ocupa más espacio que la imagen */
+  line-height: 1.6; /* Altura de línea para mejor lectura */
+  color: #333; /* Texto en gris oscuro */
+  text-align: center;
+  margin: 0 50px ;
+  /* font-style: normal; */
+}
+
+.nosotros-text h1{
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #245B3E;
+}
+
+
+
+.nosotros-text p {
+  margin-bottom: 20px; /* Espaciado entre párrafos */
+  font-weight: 400;
+  color: grey;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Sección "Servicios */
+
+ /* Estilo general de la sección PRESENTACION*/
+ .servicios-section {
+  padding: 50px 10%; /* Espaciado general */
+  background-color: #fff; /* Fondo blanco */
+}
+
+.servicios-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;  /*Espaciado entre columnas */
+  margin-bottom: 40px; /* Espaciado entre filas */
+}
+
+
+
+/* Contenedor de texto */
+.text-content {
+  max-width: 40%;
+  text-align: center;
+  padding:50px;
+}
+
+.text-content h2 {
+  font-size: 2.0rem;
+  color: #245B3E; /* Verde oscuro */
+  margin-bottom: 15px;
+}
+
+.text-content p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+
+}
+
+.cta-button {
+  background-color: #245B3E; /* Botón verde */
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #02c0a0; /* Verde más claro al pasar el ratón */
+}
+
+/* Contenedor de imagen */
+.image-content {
+  max-width: 450px; /* Limita el tamaño máximo */
+  height: auto; /* Mantén la proporción de la imagen */
+
+}
+
+.image-content img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+/* ---------------------------------------------------------------------------------- */
+ /* Sección "footer"  */
+
+ .footer {
+  background-color: #ffffff;
+  padding: 10px 30px;
+  border-top: 1px solid #e0e0e0;
+  font-family: "Lora", serif;
+  color: #333;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr; /* Cuatro columnas */
+  gap: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  text-align: left;
+}
+
+.footer-logo img {
+  max-width: 60px;
+}
+
+.footer-logo h3 {
+  font-size: 1rem;
+  color: #245B3E;
+}
+
+.footer-logo p {
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 0.75rem;
+}
+
+.footer-logo small {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.footer-nav,
+.footer-contact,
+.footer-legal {
+  text-align: left;
+}
+
+.footer-nav ul,
+.footer-contact ul,
+.footer-legal ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li,
+.footer-legal li {
+  margin-bottom: 8px;
+}
+
+.footer-nav a,
+.footer-contact a,
+.footer-legal a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+  position: relative; /* Necesario para usar ::after */
+}
+
+.footer-nav a:hover,
+.footer-contact a:hover,
+.footer-legal a:hover {
+  color: #02c0a0; /* Color de énfasis */
+}
+
+.footer-nav a::after,
+.footer-contact a::after,
+.footer-legal a::after
+ {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%; /* Inicia con ancho 0 */
+  height: 2px; /* Altura de la barra */
+  background-color: #02c0a0; /* Color de la barra */
+  transition: width 0.3s ease; /* Transición para la animación */
+}
+
+.footer-nav a:hover::after,
+.footer-contact a:hover::after,
+.footer-legal a:hover::after{
+  width: 100%; /* Se expande a todo el ancho del enlace */
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #004d40;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #02c0a0;
+}
+
+/* Menú hamburguesa */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #245B3E;
+  transition: all 0.3s;
+}
+/* ------------------------------------------------------------------ */
+/* Responsividad */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .parallax {
+    background-attachment: scroll; /* Cambia el efecto parallax en móviles */
+  }
+
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none; /* Ocultar el menú por defecto */
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nosotros-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-content,
+  .image-content {
+    max-width: 100%;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr; /* Una sola columna */
+  }
+}
+@media (max-width: 480px) {
+  .parallax-inicio h1,
+  .parallax-intermedia h1 {
+    font-size: 1.5rem;
+  }
+
+  .parallax-inicio p,
+  .parallax-intermedia p {
+    font-size: 1rem;
+  }
+
+  .nosotros-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .text-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .footer-logo img {
+    max-width: 40px;
+  }
+}
